@@ -17,6 +17,8 @@ class SignIn extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    this.setState({ email: '', password: '' });
   };
 
   handleChange = e => {
@@ -48,11 +50,13 @@ class SignIn extends React.Component {
             label="password"
             required
           />
-          <CustomButton type="submit">Submit In</CustomButton>
-          <CustomButton onClick={signInWithGoogle}>
-            {' '}
-            Sign In with Google{' '}
-          </CustomButton>
+          <div className="buttons">
+            <CustomButton type="submit">Submit In</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGooggleSignIn>
+              {' '}
+              Sign In with Google{' '}
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
