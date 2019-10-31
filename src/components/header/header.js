@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon';
+import CartDropdown from '../cart-dropdown/cart-dropdown';
+import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.scss';
-import { ReactComponent as Logo } from '../../assets/crown.svg';
-import CartDropdown from '../cart-dropdown/cart-dropdown';
 
 const Header = ({ currentUser, hidden }) => (
   <div className="header">
-    <div className="logo-container" to="/shop">
+    <Link className="logo-container" to="/">
       <Logo className="logo" />
-    </div>
+    </Link>
     <div className="options">
       <Link className="option" to="/shop">
         SHOP
