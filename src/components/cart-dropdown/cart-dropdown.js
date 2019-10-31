@@ -11,6 +11,8 @@ const CartDropdown = ({ cartItems }) => (
       {cartItems.map(cartItem => (
         <CartItem key={cartItem.id} item={cartItem} />
       ))}
+
+      {!cartItems.length ? <p>CART IS EMPTY</p> : []}
     </div>
     <CustomButton>GO TO CHECKOUT</CustomButton>
   </div>
